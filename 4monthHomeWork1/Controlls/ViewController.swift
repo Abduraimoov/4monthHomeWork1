@@ -50,14 +50,6 @@ class ViewController: UIViewController {
         return view
     }()
     
-    //    private lazy var stackView2: UIStackView = {
-    //        let view = UIStackView()
-    //        view.axis = .vertical
-    //        view.spacing = 2
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    
     private lazy var myLabelView2: UILabel = {
         let view = UILabel()
         view.text = "Employee Id / Email"
@@ -140,8 +132,6 @@ class ViewController: UIViewController {
         return frg
     }()
     
-    //---------------------------------------------------
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -168,7 +158,7 @@ class ViewController: UIViewController {
         singUpBT.addTarget(self, action: #selector(goNextView), for: .touchUpInside)
         
     }
-    //-----------------------------------------------
+    
     private func setupImage() {
         view.addSubview(myImage1)
         
