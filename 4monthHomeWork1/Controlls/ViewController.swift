@@ -123,9 +123,18 @@ class ViewController: UIViewController {
         return sng
     }()
     
+    private lazy var accountLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Don’t have an Account?"
+        lbl.textColor = .black
+        lbl.font = .systemFont(ofSize: 15, weight: .medium)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
     private lazy var singUpBT: UIButton = {
         let frg = UIButton(type: .system)
-        frg.setTitle("Don’t have an Account? Sign Up", for: .normal)
+        frg.setTitle("Sign Up", for: .normal)
         frg.tintColor = .systemBlue
         frg.addTarget(self, action: #selector(goNextView( sender:)), for: .touchUpInside)
         frg.translatesAutoresizingMaskIntoConstraints = false
@@ -286,17 +295,21 @@ class ViewController: UIViewController {
     
     private func setupsingUpBT() {
         myView2.addSubview(singUpBT)
+        myView2.addSubview(accountLabel)
         
         NSLayoutConstraint.activate([
             singUpBT.topAnchor.constraint(equalTo: singInBT.bottomAnchor, constant: 10),
-            singUpBT.leadingAnchor.constraint(equalTo: myView2.leadingAnchor, constant: 4),
+            singUpBT.leadingAnchor.constraint(equalTo: accountLabel.leadingAnchor, constant: 160),
             singUpBT.heightAnchor.constraint(equalToConstant: 16),
-            singUpBT.widthAnchor.constraint(equalToConstant: 250)
+            singUpBT.widthAnchor.constraint(equalToConstant: 70),
+            
+            accountLabel.topAnchor.constraint(equalTo: singInBT.bottomAnchor, constant: 10),
+            accountLabel.leadingAnchor.constraint(equalTo: myView2.leadingAnchor, constant: 5),
         ])
     }
     
         @objc func  goNextView( sender: UIButton) {
-            navigationController?.pushViewController(thirdViewController(), animated: true)
+            navigationController?.pushViewController(ThirdViewController(), animated: true)
         }
     
     
@@ -306,7 +319,7 @@ class ViewController: UIViewController {
                 reqTF.placeholder = "Enter your email"
                 reqTF.layer.borderColor = UIColor.red.cgColor
                 reqTF.layer.borderWidth = 2
-                return // Добавленный оператор return
+                return
             }
             return
             
@@ -316,7 +329,7 @@ class ViewController: UIViewController {
             passwordTF.placeholder = "Enter a valid password"
             passwordTF.layer.borderColor = UIColor.red.cgColor
             passwordTF.layer.borderWidth = 2
-            return // Добавленный оператор return
+            return
         }
     
         

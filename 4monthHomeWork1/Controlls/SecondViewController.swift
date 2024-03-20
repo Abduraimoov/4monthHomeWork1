@@ -11,7 +11,7 @@ class SecondViewController: UIViewController {
     
     private lazy var myImagee: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "2")
+        view.image = UIImage(named: "icons")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

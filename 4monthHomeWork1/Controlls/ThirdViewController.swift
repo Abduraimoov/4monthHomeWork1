@@ -1,5 +1,5 @@
 //
-//  thirdViewController.swift
+//  ThirdViewController.swift
 //  4monthHomeWork1
 //
 //  Created by Nurtilek on 1/18/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class thirdViewController: UIViewController {
+class ThirdViewController: UIViewController {
     
     private lazy var singUpLabel: UILabel = {
             let label = UILabel()
